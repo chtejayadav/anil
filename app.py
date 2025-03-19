@@ -29,7 +29,8 @@ def get_recommendations(movie_name):
 
 st.title("🎬 Movie Recommendation System")
 
-movie_name = st.text_input("Enter a movie name")
+movie_name = st.selectbox("Select a movie", df['title'].unique())
+
 if movie_name:
     recommendations = get_recommendations(movie_name)
     st.subheader("Recommended Movies")
