@@ -4,8 +4,8 @@ import pandas as pd
 # Load dataset
 @st.cache_data
 def load_data():
-    file_path = "anil2.xlsx"  # Ensure the file is in the same directory
-    df = pd.read_excel(file_path)
+    file_path = "anil.csv"  # Ensure the file is in the same directory
+    df = pd.read_csv(file_path)
     df = df[['title', 'year', 'genre', 'rating', 'desc']].dropna()
     df['year'] = df['year'].astype(str)
     df['rating'] = pd.to_numeric(df['rating'], errors='coerce')
